@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "604510058276",
+    "firebase_url": "https://alertz-c85e8.firebaseio.com",
+    "project_id": "alertz-c85e8",
+    "storage_bucket": "alertz-c85e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604510058276:android:cbdbc5e9ef7096a8",
+        "android_client_info": {
+          "package_name": "com.droidappsfactory.alertz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604510058276-ufniu1kr3riu1a0upm5ib874pm2vam7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.droidappsfactory.alertz",
+            "certificate_hash": "6d88cb8693a136ae188361d9eab0e03d97bcf86a"
+          }
+        },
+        {
+          "client_id": "604510058276-6lqr2d238dbs418eu0hh31p177hj3pe8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc8MSpfz4sWmoF_OvffRME93I-HqyNpdA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604510058276-6lqr2d238dbs418eu0hh31p177hj3pe8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

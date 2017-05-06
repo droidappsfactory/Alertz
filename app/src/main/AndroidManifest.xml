@@ -25,14 +25,15 @@
                 android:resource="@xml/file_paths"/>
         </provider>
 
-        <activity android:name=".AlertzActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".AlertzActivity"/>
         <activity android:name=".AlarmAlertActivity"/>
 
         <receiver android:name=".broadcasts.AlarmReceiver" />

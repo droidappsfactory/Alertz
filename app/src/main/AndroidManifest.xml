@@ -25,7 +25,9 @@
                 android:resource="@xml/file_paths"/>
         </provider>
 
-        <activity android:name=".LoginActivity">
+        <activity
+            android:launchMode="singleInstance"
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

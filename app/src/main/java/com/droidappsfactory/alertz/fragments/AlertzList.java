@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import com.droidappsfactory.alertz.R;
 import com.droidappsfactory.alertz.adapter.ArticleListAdapterCustom;
 import com.droidappsfactory.alertz.provider.AlertProvider;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
  * Created by tcsmans on 3/21/2017.
@@ -35,6 +36,14 @@ public class AlertzList extends Fragment implements LoaderManager.LoaderCallback
 
     ArticleListAdapterCustom articleListAdapterCustom;
 
+    FirebaseAnalytics analytics;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        analytics = FirebaseAnalytics.getInstance(getActivity());
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +57,7 @@ public class AlertzList extends Fragment implements LoaderManager.LoaderCallback
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                recordAddAlert();
                 listener.onAddClickListener();
             }
         });
@@ -64,6 +74,15 @@ public class AlertzList extends Fragment implements LoaderManager.LoaderCallback
 
         return rootView;
 
+    }
+
+    private void recordAddAlert() {
+
+        Bundle bundle =new Bundle();
+        bundle.putString("FABBUTTON","Clicked");
+        bundle.putString("ADDAlERT","Add Alert");
+
+        analytics.logEvent("NEW_ALERT",bundle);
     }
 
     @Override

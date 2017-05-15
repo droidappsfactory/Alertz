@@ -37,6 +37,7 @@ import com.droidappsfactory.alertz.R;
 import com.droidappsfactory.alertz.database.DBColumns;
 import com.droidappsfactory.alertz.provider.AlertProvider;
 import com.droidappsfactory.alertz.util.LogHelper;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.File;
 import java.io.IOException;
@@ -63,6 +64,7 @@ public class SetAlert extends Fragment {
     private int mYear, mMonth, mDay, mHour, mMinute;
     int select_hour, select_minute, select_day, select_month, select_year;
     boolean flag=false;
+    FirebaseAnalytics analytics;
 
     TextInputEditText tv_title,tv_desc;
 
@@ -73,6 +75,12 @@ public class SetAlert extends Fragment {
     String videoUriString;
     AlarmManager alarmManager;
     private PendingIntent pendingIntent;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        analytics = FirebaseAnalytics.getInstance(getActivity());
+    }
 
     @Nullable
     @Override
@@ -100,6 +108,8 @@ public class SetAlert extends Fragment {
         iv_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                recordMediaProperty("Picture");
+
                 takePicture();
             }
         });
@@ -107,6 +117,7 @@ public class SetAlert extends Fragment {
         iv_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                recordMediaProperty("Video");
                 dispatchTakeVideoIntent();
             }
         });
@@ -257,6 +268,10 @@ public class SetAlert extends Fragment {
             }
         });
         return rootView;
+    }
+
+    private void recordMediaProperty(String param) {
+        analytics.setUserProperty("TYPEOFMEDIA",param);
     }
 
     @Override

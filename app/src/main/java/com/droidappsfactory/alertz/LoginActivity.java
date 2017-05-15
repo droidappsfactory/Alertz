@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.droidappsfactory.alertz.util.LogHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.EmailAuthCredential;
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAnalytics analytics;
 
     ProgressDialog progressDialog;
     Context context;
@@ -102,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
         bt_login = (Button)findViewById(R.id.btn_login);
         tv_signup = (TextView)findViewById(R.id.tv_signup);
         mAuth = FirebaseAuth.getInstance();
+        analytics = FirebaseAnalytics.getInstance(context);
+        recordScreenView();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -119,6 +123,10 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         };
+    }
+
+    private void recordScreenView() {
+        analytics.setCurrentScreen(this,LoginActivity.class.getSimpleName(),"Check this value");
     }
 
     @Override

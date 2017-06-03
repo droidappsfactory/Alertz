@@ -34,7 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity android:name=".AlertzActivity"/>
         <activity android:name=".AlarmAlertActivity"/>
 

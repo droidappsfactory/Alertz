@@ -134,4 +134,6 @@ public class AlertzActivity extends AppCompatActivity  implements AlertzList.OnA
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

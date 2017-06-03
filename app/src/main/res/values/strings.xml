@@ -6,4 +6,5 @@
     <string name="signup">Sign up</string>
     <string name="register">Register</string>
     <string name="logout">Logout</string>
+    <string name="retypepwd">Enter password again</string>
 </resources>

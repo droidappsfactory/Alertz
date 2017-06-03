@@ -21,6 +21,7 @@ import com.droidappsfactory.alertz.fragments.SetAlert;
 import com.droidappsfactory.alertz.util.Const;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class AlertzActivity extends AppCompatActivity  implements AlertzList.OnAlertAddListener ,SetAlert.OnAlarmSetListner {
 
@@ -63,6 +64,7 @@ public class AlertzActivity extends AppCompatActivity  implements AlertzList.OnA
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
+
                 if (firebaseUser != null) {
                     // User is signed in
 

@@ -1,5 +1,6 @@
 package com.droidappsfactory.alertz;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -90,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(context,SignUpActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.move_right_in_activity,R.anim.move_left_out_activity);
             }
         });
     }

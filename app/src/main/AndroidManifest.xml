@@ -26,6 +26,7 @@
         </provider>
 
         <activity
+            android:theme="@style/AppThemeNoActionBar"
             android:launchMode="singleInstance"
             android:name=".LoginActivity">
             <intent-filter>

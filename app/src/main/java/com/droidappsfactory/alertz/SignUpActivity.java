@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(context,"Please re-enter your password",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(passWord.equalsIgnoreCase(retypePassWord)){
+                if(!passWord.equalsIgnoreCase(retypePassWord)){
                     Toast.makeText(context,"Entered passwords didn't match",Toast.LENGTH_SHORT).show();
                     et_passowrd.setText("");
                     et_retype_pwd.setText("");

@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(context,AlertzActivity.class);
                             startActivity(intent);
                             finish();
+                            overridePendingTransition(0,0);
                         }else {
 
                             Toast.makeText(context,"Please check your credentials",Toast.LENGTH_SHORT).show();

@@ -119,6 +119,13 @@ public class ArticleListAdapterCustom extends CustomRecyclerViewAdapter<ArticleL
             }
         });
 
+        holder.lt_alertz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
 
